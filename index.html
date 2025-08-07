@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prince Hotel Billing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Welcome to Prince Hotel</h1>
+
+  <!-- ROOM BOOKING -->
+  <section class="room-booking">
+    <h2>Book a Room</h2>
+    <label>Room Type:
+      <select id="roomType">
+        <option value="single">Single - ₹1000</option>
+        <option value="double">Double - ₹1800</option>
+        <option value="deluxe">Deluxe - ₹2500</option>
+      </select>
+    </label>
+    <br>
+    <label>Number of Nights:
+      <input type="number" id="nights" value="1" min="1" />
+    </label>
+  </section>
+
+  <hr />
+
+  <!-- FOOD ORDERING -->
+  <section class="food-order">
+    <h2>Order Food</h2>
+    <div id="menu"></div>
+  </section>
+
+  <hr />
+
+  <!-- BILL + PAYMENT -->
+  <section class="bill-pay">
+    <button onclick="calculateTotal()">Generate Bill & Show QR</button>
+    <div id="billOutput"></div>
+
+    <div id="qrSection" style="display: none;">
+      <h3>Scan & Pay</h3>
+      <img src="images/upi-qr.png" alt="Pay via UPI" class="qr-img" />
+      <p id="payAmount"></p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
